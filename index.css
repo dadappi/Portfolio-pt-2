@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #FFF8E7;
+  --color-bg-elevated: #FFFDF6;
+  --color-border: #F0DFB4;
+  --color-text: #2B4A4A;
+  --color-text-muted: #6E8286;
+  --color-accent-purple: #FF8A5B;
+  --color-accent-cyan: #2AA5A0;
+  --color-gradient-start: #FF8A5B;
+  --color-gradient-end: #2AA5A0;
+
+  --font-sans: "Nunito", system-ui, sans-serif;
+  --font-heading: "Baloo 2", "Nunito", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --animate-fade-in: fadeIn 0.6s ease-out;
+  --animate-slide-up: slideUp 0.6s ease-out;
+  --animate-slide-down: slideDown 0.6s ease-out;
+  --animate-bob: bob 3s ease-in-out infinite;
+  --animate-sway: sway 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+::selection {
+  background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+  color: white;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding: 0 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding: 0 4rem;
+  }
+}
+
+.wave-divider {
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  width: 100%;
+  height: 100%;
+}
